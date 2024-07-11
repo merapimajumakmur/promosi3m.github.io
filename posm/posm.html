@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Promosi MMM</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet" />
+
+    <!-- jQuery TRANSISI SCROLLING-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- my style -->
+    <link rel="stylesheet" href="/posm/style.css" />
+
+    <link rel="shortcut icon" href="/img/favicon Merapi Maju Makmur.png" type="image/x-icon" />
+
+    <!-- Animasi loading -->
+    <style>
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 8px solid #3498db;
+        width: 50px;
+        height: 50px;
+        -webkit-animation: spin 1s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: none; /* Sembunyikan loader awalnya */
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- downArrow -->
+    <style>
+      /* CSS untuk memperbaiki tampilan tombol */
+      .downArrow {
+        position: absolute;
+        bottom: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px; /* Ukuran tombol lebih besar */
+        height: 60px; /* Ukuran tombol lebih besar */
+        background-color: #ffffff; /* Warna cerah */
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, background-color 0.3s;
+        cursor: pointer;
+      }
+
+      .downArrow img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .downArrow:hover {
+        background-color: #d31212; /* Warna hover lebih gelap */
+        transform: scale(1.1);
+      }
+
+      .bounce {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-15px);
+        }
+        60% {
+          transform: translateY(-7px);
+        }
+      }
+
+      /* CSS untuk membuat tombol responsif */
+      @media (max-width: 768px) {
+        .cta {
+          display: block;
+          margin: 10px auto;
+          width: 80%;
+        }
+
+        .downArrow {
+          width: 50px;
+          height: 50px;
+          bottom: 650px;
+        }
+
+        .downArrow img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cta {
+          width: 100%;
+        }
+
+        .downArrow {
+          width: 40px;
+          height: 40px;
+          bottom: 650px;
+        }
+
+        .downArrow img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    </style>
+
+    <!-- ToTop -->
+    <style>
+      #toTop {
+        display: none; /* Initially hidden */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .bounce {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-15px);
+        }
+        60% {
+          transform: translateY(-7px);
+        }
+      }
+
+      #toTop:hover {
+        background-color: #00b7ff;
+        color: #ffffff;
+        background-position: contain;
+        transform: scale(1.1);
+        background-position: center;
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader" class="loader"></div>
+
+    <!-- navbar start-->
+    <nav class="navbar">
+      <a href="/index.html" class="navbar-logo">Media Promosi<span>MMM</span>.</a>
+      <div class="navbar-nav">
+        <a href="/index.html#">Home</a>
+        <a href="/index.html#barang">Barang</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="hamburger-menu"> <i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- navbar end-->
+
+    <!-- Hero Section Start -->
+    <section class="hero-posm" id="home">
+      <main class="content">
+        <h1>Barang POSM<span>MMM</span></h1>
+        <p class>#sukses tanpa batas.</p>
+        <a href="/posm/posm.html" class="cta"> Tinjau barang POSM</a>
+        <a href="/merchandise/merchandise.html" class="cta">Tinjau barang Merchandise</a>
+        <a href="/event/event.html" class="cta">Tinjau barang Perlengkapan Event</a>
+        <a href="/vehicle branding/vehicle branding.html" class="cta">Tinjau Branding Kendaraan</a>
+      </main>
+      <a class="downArrow bounce" href="#barang">
+        <img
+          width="40"
+          height="40"
+          alt="Down Arrow"
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4="
+        />
+      </a>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Menu section start -->
+    <section id="barang" class="barang">
+      <h2><span>Barang POSM</span> Kami</h2>
+      <p>Barang POSM kami terbagi dalam beberapa golongan sesuai dengan barang produk dari Mitra Perusahaan kami</p>
+
+      <div class="company-selector">
+        <label for="company">Principal :</label>
+        <select id="company" onchange="loadCompanyInfo()">
+          <option value="company1">PT Merapi Agung Lestari</option>
+          <option value="company2">PT Gandum</option>
+        </select>
+      </div>
+
+      <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <h3>Kategori Barang</h3>
+          <ul>
+            <li><a onclick="filterCategory('sticker')" style="cursor: pointer">STICKER</a></li>
+            <li><a onclick="filterCategory('flagchain')" style="cursor: pointer">FLAGCHAIN</a></li>
+            <li><a onclick="filterCategory('poster')" style="cursor: pointer">POSTER</a></li>
+            <li><a onclick="filterCategory('tenda')" style="cursor: pointer">LAYAR ROMBONG</a></li>
+            <li><a onclick="filterCategory('spanduk')" style="cursor: pointer">SPANDUK</a></li>
+            <li><a onclick="filterCategory('umbul')" style="cursor: pointer">UMBUL-UMBUL</a></li>
+            <li><a onclick="filterCategory('gasebo')" style="cursor: pointer">GASEBO</a></li>
+
+            <!-- Tambahkan kategori barang lain jika diperlukan -->
+          </ul>
+        </div>
+
+        <!-- Gallery Cards -->
+        <div class="gallery" id="companyGallery">
+          <!-- This will be dynamically populated based on the selected company -->
+        </div>
+      </div>
+    </section>
+    <!-- Menu section end -->
+
+    <!-- Modals MAL-->
+    <!-- Modal 1 -->
+    <div class="modal" id="myModal1" onclick="closeModal('myModal1')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal1')">&times;</span>
+        <img src="/img_posm/SPANDUK NES 3.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 1 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal" id="myModal2" onclick="closeModal('myModal2')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal2')">&times;</span>
+        <img src="/img_posm/SPANDUK NES 6.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal" id="myModal3" onclick="closeModal('myModal3')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal3')">&times;</span>
+        <img src="/img_posm/SPANDUK NES 10.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 3 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal" id="myModal4" onclick="closeModal('myModal4')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal4')">&times;</span>
+        <img src="/img_posm/SPANDUK NBL.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal" id="myModal5" onclick="closeModal('myModal5')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal5')">&times;</span>
+        <img src="/img_posm/SPANDUK PUASA NESLITE 2024.jpeg" alt="Gambar 1" />
+        <img src="/img_posm/SPANDUK PUASA NESMAX 2024.jpeg" alt="Gambar 2" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="modal" id="myModal6" onclick="closeModal('myModal6')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal6')">&times;</span>
+        <img src="/img_posm/STICKER 286 K 1.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 9 -->
+    <div class="modal" id="myModal9" onclick="closeModal('myModal9')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal9')">&times;</span>
+        <img src="/img_posm/STICKER NES BLACK.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 10 -->
+    <div class="modal" id="myModal10" onclick="closeModal('myModal10')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal10')">&times;</span>
+        <img src="/img_posm/STICKER NES BLUE LABEL.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 36 -->
+    <div class="modal" id="myModal36" onclick="closeModal('myModal36')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal36')">&times;</span>
+        <img src="/img_posm/STICKER NES MNTHOL.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 11 -->
+    <div class="modal" id="myModal11" onclick="closeModal('myModal11')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal11')">&times;</span>
+        <img src="/img_posm/STICKER NES REG.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 14 -->
+    <div class="modal" id="myModal14" onclick="closeModal('myModal14')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal14')">&times;</span>
+        <img src="/img_posm/STICKER NESLITE MAX 20.jpg" alt="Gambar 1" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 16 -->
+    <!-- <div class="modal" id="myModal16" onclick="closeModal('myModal16')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal16')">&times;</span>
+        <img src="/img_posm/GANTUNGAN KASIR NES.png" alt="Gambar 1" />
+
+        Add more images for modal 2 if needed -->
+    <!-- </div>
+    </div> -->
+
+    <!-- Modal 18 -->
+    <div class="modal" id="myModal18" onclick="closeModal('myModal18')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal8')">&times;</span>
+        <img src="/img_posm/UMBUL NR 5.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 19 -->
+    <div class="modal" id="myModal19" onclick="closeModal('myModal19')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal19')">&times;</span>
+        <img src="/img_posm/UMBUL NBL 2.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 20 -->
+    <div class="modal" id="myModal20" onclick="closeModal('myModal20')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal20')">&times;</span>
+        <img src="/img_posm/UMBUL NES MENTHOL 3.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 21 -->
+    <div class="modal" id="myModal21" onclick="closeModal('myModal21')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal21')">&times;</span>
+        <img src="/img_posm/UMBUL NLB 4.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 22 -->
+    <div class="modal" id="myModal22" onclick="closeModal('myModal22')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal22')">&times;</span>
+        <img src="/img_posm/GASEBO 3X3 NESREG.png" alt="Gambar 1" />
+        <img src="/img_posm/GASEBO 3 X 3 NES BLACK.png" alt="Gambar 2" />
+        <img src="/img_posm/GASEBO 3 X 3 NES MENTHOL.png" alt="Gambar 3" />
+        <img src="/img_posm/GASEBO 3X3 NBL.png" alt="Gambar 4" />
+        <img src="/img_posm/GASEBO 3X3 NESLITE MAX.png" alt="Gambar 5" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 23 -->
+    <div class="modal" id="myModal23" onclick="closeModal('myModal23')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal23')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG NES REGULAR.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 24 -->
+    <div class="modal" id="myModal24" onclick="closeModal('myModal24')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal24')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG NES MENTOL.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 25 -->
+    <div class="modal" id="myModal25" onclick="closeModal('myModal25')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal25')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG NES BLCK.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 26 -->
+    <div class="modal" id="myModal26" onclick="closeModal('myModal26')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal26')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG NBL.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 27 -->
+    <div class="modal" id="myModal27" onclick="closeModal('myModal27')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal27')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG 286 KUNING.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 35 -->
+    <!-- <div class="modal" id="myModal35" onclick="closeModal('myModal35')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal35')">&times;</span>
+        <img src="/img_posm/PARASOL NES 1.png" alt="Gambar 1" />
+        <img src="/img_posm/PARASOL NES 2.png" alt="Gambar 2" /> -->
+
+    <!-- Add more images for modal 2 if needed -->
+    <!-- </div>
+    </div> -->
+
+    <!-- Modal 37 -->
+    <div class="modal" id="myModal37" onclick="closeModal('myModal37')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal37')">&times;</span>
+        <img src="/img_posm/POSTER NLD.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 38 -->
+    <div class="modal" id="myModal38" onclick="closeModal('myModal38')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal38')">&times;</span>
+        <img src="/img_posm/POSTER NLCH.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 39 -->
+    <div class="modal" id="myModal39" onclick="closeModal('myModal39')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal39')">&times;</span>
+        <img src="/img_posm/POSTER NLB.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 40 -->
+    <div class="modal" id="myModal40" onclick="closeModal('myModal40')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal40')">&times;</span>
+        <img src="/img_posm/POSTER NBL.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 45 -->
+    <div class="modal" id="myModal45" onclick="closeModal('myModal45')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal45')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG NESLITE MAX.jpg" alt="Gambar 1" />
+        <img src="/img_posm/TENDA ROMBONG NMAX 1500btg.jpeg" alt="Gambar 2" />
+      </div>
+    </div>
+    <!-- Modal 46 -->
+    <div class="modal" id="myModal46" onclick="closeModal('myModal46')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal46')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG 286 MERAH.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 47 -->
+    <div class="modal" id="myModal47" onclick="closeModal('myModal47')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal47')">&times;</span>
+        <img src="/img_posm/FLAGCHAIN NLD.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 48 -->
+    <div class="modal" id="myModal48" onclick="closeModal('myModal48')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal48')">&times;</span>
+        <img src="/img_posm/FLAGCHAIN NESLITE MENTHOL.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 49 -->
+    <div class="modal" id="myModal49" onclick="closeModal('myModal49')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal49')">&times;</span>
+        <img src="/img_posm/FLAGCHAIN NLB.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 50 -->
+    <div class="modal" id="myModal50" onclick="closeModal('myModal50')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal50')">&times;</span>
+        <img src="/img_posm/FLAGCHAIN NESLITE MAX.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 56 -->
+    <div class="modal" id="myModal56" onclick="closeModal('myModal56')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal56')">&times;</span>
+        <img src="/img_posm/STICKER NESLITE MAX 12.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 57 -->
+    <div class="modal" id="myModal57" onclick="closeModal('myModal57')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal57')">&times;</span>
+        <img src="/img_posm/POSTER NES MAX 12.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 58 -->
+    <div class="modal" id="myModal58" onclick="closeModal('myModal58')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal58')">&times;</span>
+        <img src="/img_posm/STICKER 286 MERAH.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 59 -->
+    <div class="modal" id="myModal59" onclick="closeModal('myModal59')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal59')">&times;</span>
+        <img src="/img_posm/POSTER 286 MERAH.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+
+    <!-- POSM PT Gandum -->
+    <!-- Modal 7 -->
+    <div class="modal" id="myModal7" onclick="closeModal('myModal7')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal7')">&times;</span>
+        <img src="/img_posm/POSTER MGF.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div class="modal" id="myModal8" onclick="closeModal('myModal8')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal8')">&times;</span>
+        <img src="/img_posm/SPANDUK MGMX 2.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+
+    <!-- Modal 12 -->
+    <div class="modal" id="myModal12" onclick="closeModal('myModal12')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal12')">&times;</span>
+        <img src="/img_posm/STICKER MGM MAX.png" alt="Gambar 1" />
+        <img src="/img_posm/STICKER MGM MAX 2.jpg" alt="Gambar 2" />
+      </div>
+    </div>
+
+    <!-- Modal 13 -->
+    <div class="modal" id="myModal13" onclick="closeModal('myModal13')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal13')">&times;</span>
+        <img src="/img_posm/STICKER NICE BOLD.jpg" alt="Gambar 1" />
+        <img src="/img_posm/STICKER NICE BOLD 2.png" alt="Gambar 2" />
+      </div>
+    </div>
+
+    <!-- Modal 15 -->
+    <!-- <div class="modal" id="myModal15" onclick="closeModal('myModal15')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal15')">&times;</span>
+        <img src="/img_posm/PARASOL MGMX 1.png" alt="Gambar 1" />
+        <img src="/img_posm/PARASOL MGMX 3.png" alt="Gambar 2" /> -->
+    <!-- Add more images for modal 2 if needed -->
+    <!-- </div>
+    </div> -->
+
+    <!-- Modal 17 -->
+    <div class="modal" id="myModal17" onclick="closeModal('myModal17')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal17')">&times;</span>
+        <img src="/img_posm/STICKER MAGNUM KRETEK.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 28 -->
+    <div class="modal" id="myModal28" onclick="closeModal('myModal28')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal28')">&times;</span>
+        <img src="/img_posm/UMBUL MX 1.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 29 -->
+    <div class="modal" id="myModal29" onclick="closeModal('myModal29')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal29')">&times;</span>
+        <img src="/img_posm/STICKER MGF 16.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 30 -->
+    <div class="modal" id="myModal30" onclick="closeModal('myModal30')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal30')">&times;</span>
+        <img src="/img_posm/STICKER FIXMAX.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 31 -->
+    <div class="modal" id="myModal31" onclick="closeModal('myModal31')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal31')">&times;</span>
+        <img src="/img_posm/GASEBO 3 X 3 MAGNUM.png" alt="Gambar 1" />
+        <img src="/img_posm/GASEBO 3X3 MAGNUM MAX.png" alt="Gambar 2" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 33 -->
+    <div class="modal" id="myModal33" onclick="closeModal('myModal33')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal33')">&times;</span>
+        <img src="/img_posm/GASEBO 3X3 NICE BOLD.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 32 -->
+    <div class="modal" id="myModal32" onclick="closeModal('myModal32')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal32')">&times;</span>
+        <img src="/img_posm/POSTER FIXMAX 20.jpg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 34 -->
+    <div class="modal" id="myModal34" onclick="closeModal('myModal34')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal34')">&times;</span>
+        <img src="/img_posm/SPANDUK PUASA MGMMAX 2024.jpeg" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+    <!-- Modal 41 -->
+    <div class="modal" id="myModal41" onclick="closeModal('myModal41')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal41')">&times;</span>
+        <img src="/img_posm/POSTER MGM MX 12.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 42 -->
+    <div class="modal" id="myModal42" onclick="closeModal('myModal42')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal42')">&times;</span>
+        <img src="/img_posm/POSTER MAGNUM MAX.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 43 -->
+    <div class="modal" id="myModal43" onclick="closeModal('myModal43')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal43')">&times;</span>
+        <img src="/img_posm/POSTER NBR.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 44 -->
+    <div class="modal" id="myModal44" onclick="closeModal('myModal44')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal44')">&times;</span>
+        <img src="/img_posm/POSTER NICE BOLD.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 51 -->
+    <div class="modal" id="myModal51" onclick="closeModal('myModal51')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal51')">&times;</span>
+        <img src="/img_posm/STICKER NICE BOLD BLCK.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 52 -->
+    <div class="modal" id="myModal52" onclick="closeModal('myModal52')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal52')">&times;</span>
+        <img src="/img_posm/FLAGCHAIN MAGNUM FILTER.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 53 -->
+    <div class="modal" id="myModal53" onclick="closeModal('myModal53')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal53')">&times;</span>
+        <img src="/img_posm/FLAGCHAIN MAGNUM MAX.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 54 -->
+    <div class="modal" id="myModal54" onclick="closeModal('myModal54')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal54')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG MAGNUM KRETEK.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+    <!-- Modal 55 -->
+    <div class="modal" id="myModal55" onclick="closeModal('myModal55')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal55')">&times;</span>
+        <img src="/img_posm/TENDA ROMBONG MAGNUM MAX.jpg" alt="Gambar 1" />
+      </div>
+    </div>
+
+    <script>
+      // Function to load company-specific information
+      function loadCompanyInfo() {
+        var selectedCompany = document.getElementById("company").value;
+        var companyGallery = document.getElementById("companyGallery");
+
+        // Clear previous content
+        companyGallery.innerHTML = "";
+
+        // Dynamically populate cards based on the selected company
+        switch (selectedCompany) {
+          case "company1":
+            // Add cards for PT Merapi Agung Lestari
+            companyGallery.innerHTML = `
+                <!-- Card 1 -->
+                <div class="card" onclick="openModal('myModal3')">
+                  <img src="/img_posm/SPANDUK NES 10.jpg" alt="SPANDUK NES REG">
+                  <p>SPANDUK NESLITE REGULER</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card" onclick="openModal('myModal2')">
+                  <img src="/img_posm/SPANDUK NES 6.jpg" alt="SPANDUK NES MNTHL">
+                  <p>SPANDUK NESLITE MENTHOL</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card" onclick="openModal('myModal1')">
+                  <img src="/img_posm/SPANDUK NES 3.jpg" alt="SPANDUK NES BLACK">
+                  <p>SPANDUK NESLITE BLACK EDITION</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="card" onclick="openModal('myModal4')">
+                  <img src="/img_posm/SPANDUK NBL.jpg" alt="SPANDUK NES BL">
+                  <p>SPANDUK NESLITE BLUE LABEL</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="card" onclick="openModal('myModal5')">
+                  <img src="/img_posm/SPANDUK PUASA NESLITE 2024.jpeg" alt="">
+                  <p>SPANDUK PUASA NESLITE</p>
+                </div>
+                
+                <!-- Card 9 -->
+                <div class="card" onclick="openModal('myModal11')">
+                  <img src="/img_posm/STICKER NES REG.jpg" alt="STICKER NES REG">
+                  <p>STICKER NESLITE REGULER</p>
+                </div>
+                <!-- Card 23 -->
+                <div class="card" onclick="openModal('myModal36')">
+                  <img src="/img_posm/STICKER NES MNTHOL.jpg" alt="STICKER NES MENTHOL">
+                  <p>STICKER NESLITE MENTHOL</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="card" onclick="openModal('myModal9')">
+                  <img src="/img_posm/STICKER NES BLACK.jpg" alt="STICKER BLACK EDITION">
+                  <p>STICKER NESLITE BLACK EDITION</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="card" onclick="openModal('myModal10')">
+                  <img src="/img_posm/STICKER NES BLUE LABEL.jpg" alt="STICKER NES BL">
+                  <p>STICKER NESLITE BLUE LABEL</p>
+                </div>
+                <!-- Card 10 -->
+                <div class="card" onclick="openModal('myModal14')">
+                  <img src="/img_posm/STICKER NESLITE MAX 20.jpg" alt="STICKER NESMAX">
+                  <p>STICKER NESLITE MAX 20</p>
+                </div>
+                <!-- Card 34 -->
+                <div class="card" onclick="openModal('myModal56')">
+                  <img src="/img_posm/STICKER NESLITE MAX 12.jpg" alt="STICKER NESMAX">
+                  <p>STICKER NESLITE MAX 12</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="card" onclick="openModal('myModal6')">
+                <img src="/img_posm/STICKER 286 K 1.jpg" alt="STICKER 286">
+                <p>STICKER DJI PEK LAK KUNING
+                </p>
+                </div>
+                <!-- Card 33 -->
+                <div class="card" onclick="openModal('myModal58')">
+                <img src="/img_posm/STICKER 286 MERAH.jpg" alt="STICKER 286">
+                <p>STICKER DJI PEK LAK MERAH
+                </p>
+                </div>
+                <!-- Card 12 -->
+                <div class="card" onclick="openModal('myModal18')">
+                  <img src="/img_posm/UMBUL NR.png" alt="UMBUL" NESLITE">
+                  <p>UMBUL-UMBUL NESLITE REGULER</p>
+                </div>
+                <!-- Card 13 -->
+                <div class="card" onclick="openModal('myModal19')">
+                  <img src="/img_posm/UMBUL NBL.png" alt="UMBUL" NESLITE">
+                  <p>UMBUL-UMBUL NESLITE BLUE LABEL</p>
+                </div>
+                <!-- Card 14 -->
+                <div class="card" onclick="openModal('myModal20')">
+                  <img src="/img_posm/UMBUL NES MENTHOL.png" alt="UMBUL" NESLITE">
+                  <p>UMBUL-UMBUL NESLITE MENTHOL</p>
+                </div>
+                <!-- Card 15 -->
+                <div class="card" onclick="openModal('myModal21')">
+                  <img src="/img_posm/UMBUL NLB.png" alt="UMBUL" NESLITE">
+                  <p>UMBUL-UMBUL NESLITE BLACK</p>
+                </div>
+                <!-- Card 16 -->
+                <div class="card" onclick="openModal('myModal22')">
+                  <img src="/img_posm/GASEBO 3X3 NESREG.png" alt="GASEBO NESLITE">
+                  <p>GASEBO NESLITE</p>
+                </div>
+                <!-- Card 17 -->
+                <div class="card" onclick="openModal('myModal23')">
+                  <img src="/img_posm/TENDA ROMBONG NES REGULAR.jpg" alt="TENDA ROMBONG NESLITE">
+                  <p>TENDA ROMBONG NESLITE REGULAR</p>
+                </div>
+                <!-- Card 18 -->
+                <div class="card" onclick="openModal('myModal24')">
+                  <img src="/img_posm/TENDA ROMBONG NES MENTOL.jpg" alt="TENDA ROMBONG NESLITE">
+                  <p>TENDA ROMBONG NESLITE MENTHOL</p>
+                </div>
+                <!-- Card 19 -->
+                <div class="card" onclick="openModal('myModal25')">
+                  <img src="/img_posm/TENDA ROMBONG NES BLCK.jpg" alt="TENDA ROMBONG NESLITE">
+                  <p>TENDA ROMBONG NESLITE BLACK</p>
+                </div>
+                <!-- Card 20 -->
+                <div class="card" onclick="openModal('myModal26')">
+                  <img src="/img_posm/TENDA ROMBONG NBL.jpg" alt="TENDA ROMBONG NESLITE">
+                  <p>TENDA ROMBONG NESLITE BLUE LABEL</p>
+                </div>
+                <!-- Card 21 -->
+                <div class="card" onclick="openModal('myModal45')">
+                  <img src="/img_posm/TENDA ROMBONG NESLITE MAX.jpg" alt="TENDA ROMBONG NESLITE">
+                  <p>TENDA ROMBONG NESLITE MAX</p>
+                </div>
+                <!-- Card 22 -->
+                <div class="card" onclick="openModal('myModal27')">
+                  <img src="/img_posm/TENDA ROMBONG 286 KUNING.jpg" alt="TENDA ROMBONG 286">
+                  <p>TENDA ROMBONG 286 KUNING</p>
+                </div>
+                <!-- Card 23 -->
+                <div class="card" onclick="openModal('myModal46')">
+                  <img src="/img_posm/TENDA ROMBONG 286 MERAH.jpg" alt="TENDA ROMBONG 286">
+                  <p>TENDA ROMBONG 286 MERAH</p>
+                </div>
+                <!-- Card 24 -->
+                <div class="card" onclick="openModal('myModal37')">
+                  <img src="/img_posm/POSTER NLD.jpg" alt="POSTER NESLITE">
+                  <p>POSTER NESLITE REGULER</p>
+                </div>
+                <!-- Card 25 -->
+                <div class="card" onclick="openModal('myModal38')">
+                  <img src="/img_posm/POSTER NLCH.jpg" alt="POSTER NESLITE">
+                  <p>POSTER NESLITE MENTHOL</p>
+                </div>
+                <!-- Card 26 -->
+                <div class="card" onclick="openModal('myModal39')">
+                  <img src="/img_posm/POSTER NLB.jpg" alt="POSTER NESLITE">
+                  <p>POSTER NESLITE BLACK EDITION</p>
+                </div>
+                <!-- Card 27 -->
+                <div class="card" onclick="openModal('myModal40')">
+                  <img src="/img_posm/POSTER NBL.jpg" alt="POSTER NESLITE">
+                  <p>POSTER NESLITE BLUE LABEL</p>
+                </div>
+                <!-- Card 33 -->
+                <div class="card" onclick="openModal('myModal57')">
+                  <img src="/img_posm/POSTER NES MAX 12.jpg" alt="POSTER NESLITE MAX">
+                  <p>POSTER NESLITE MAX 12</p>
+                </div>
+                <!-- Card 35 -->
+                <div class="card" onclick="openModal('myModal58')">
+                <img src="/img_posm/POSTER 286 MERAH.jpg" alt="STICKER 286">
+                <p>POSTER DJI PEK LAK MERAH
+                </p>
+                </div>
+                <!-- Card 29 -->
+                <div class="card" onclick="openModal('myModal47')">
+                  <img src="/img_posm/FLAGCHAIN NLD.jpg" alt="FLAGCHAIN NESLITE">
+                  <p>FLAGCHAIN NESLITE REGULER</p>
+                </div>
+                <!-- Card 30 -->
+                <div class="card" onclick="openModal('myModal48')">
+                  <img src="/img_posm/FLAGCHAIN NESLITE MENTHOL.jpg" alt="FLAGCHAIN NESLITE">
+                  <p>FLAGCHAIN NESLITE MENTHOL</p>
+                </div>
+                <!-- Card 31 -->
+                <div class="card" onclick="openModal('myModal49')">
+                  <img src="/img_posm/FLAGCHAIN NLB.jpg" alt="FLAGCHAIN NESLITE">
+                  <p>FLAGCHAIN NESLITE BLACK</p>
+                </div>
+                <!-- Card 32 -->
+                <div class="card" onclick="openModal('myModal50')">
+                  <img src="/img_posm/FLAGCHAIN NESLITE MAX.jpg" alt="FLAGCHAIN NESLITE">
+                  <p>FLAGCHAIN NESLITE MAX</p>
+                </div>
+
+                <!-- Add more cards if needed -->
+              `;
+            break;
+
+          case "company2":
+            // Add cards for PT Gandum
+            companyGallery.innerHTML = `
+                <!-- Card 1 -->
+                <div class="card" onclick="openModal('myModal7')">
+                  <img src="/img_posm/POSTER MGF.jpg" alt="POSTER MGK">
+                  <p>POSTER MAGNUM FILTER</p>
+                </div>
+                <!-- Card 12 -->
+                <div class="card" onclick="openModal('myModal41')">
+                  <img src="/img_posm/POSTER MGM MX 12.jpg" alt="POSTER MGMX">
+                  <p>POSTER MAGNUM MAX 12</p>
+                </div>
+                <!-- Card 13 -->
+                <div class="card" onclick="openModal('myModal42')">
+                  <img src="/img_posm/POSTER MAGNUM MAX.jpg" alt="POSTER MGMX">
+                  <p>POSTER MAGNUM MAX 20</p>
+                </div>
+                <!-- Card 21 -->
+                <div class="card" onclick="openModal('myModal43')">
+                  <img src="/img_posm/POSTER NBR.jpg" alt="POSTER MGMX">
+                  <p>POSTER NICE BOLD RED</p>
+                </div>
+                <!-- Card 20 -->
+                <div class="card" onclick="openModal('myModal44')">
+                  <img src="/img_posm/POSTER NICE BOLD.jpg" alt="POSTER NB">
+                  <p>POSTER NICE BOLD</p>
+                </div>
+                <!-- Card 10 -->
+                <div class="card" onclick="openModal('myModal32')">
+                  <img src="/img_posm/POSTER FIXMAX 20.jpg" alt="POSTER FIXMAX">
+                  <p>POSTER FIX MAX</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card" onclick="openModal('myModal8')">
+                  <img src="/img_posm/SPANDUK MGMX 2.jpg" alt="KAOS OBLONG MAGNUM FILTER">
+                  <p>SPANDUK MAGNUM MAX</p>
+                </div>
+                <!-- Card 12 -->
+                <div class="card" onclick="openModal('myModal34')">
+                  <img src="/img_posm/SPANDUK PUASA MGMMAX 2024.jpeg" alt="SPANDUK PUASA MAGNUM ">
+                  <p>SPANDUK PUASA MAGNUM MAX</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card" onclick="openModal('myModal17')">
+                  <img src="/img_posm/STICKER MAGNUM KRETEK.jpg" alt="STICKER MGK">
+                  <p>STICKER MAGNUM KRETEK</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card" onclick="openModal('myModal12')">
+                  <img src="/img_posm/STICKER MGM MAX 2.jpg" alt="STICKER MX">
+                  <p>STICKER MAGNUM MAX</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="card" onclick="openModal('myModal29')">
+                  <img src="/img_posm/STICKER MGF 16.jpg" alt="STICKER MGF">
+                  <p>STICKER MAGNUM FILTER</p>
+                </div>
+                <!-- Card 9 -->
+                <div class="card" onclick="openModal('myModal30')">
+                  <img src="/img_posm/STICKER FIXMAX.jpg" alt="STICKER FIX MAX">
+                  <p>STICKER FIX MAX</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="card" onclick="openModal('myModal13')">
+                  <img src="/img_posm/STICKER NICE BOLD.jpg" alt="STICKER NBR">
+                  <p>STICKER NICE BOLD RED</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="card" onclick="openModal('myModal51')">
+                  <img src="/img_posm/STICKER NICE BOLD BLCK.jpg" alt="STICKER NBL">
+                  <p>STICKER NICE BOLD</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="card" onclick="openModal('myModal28')">
+                  <img src="/img_posm/UMBUL MX.png" alt="UMBUL" MGMX">
+                  <p>UMBUL-UMBUL MAGNUM MAX</p>
+                </div>
+                <!-- Card 7 -->
+                <div class="card" onclick="openModal('myModal31')">
+                  <img src="/img_posm/GASEBO 3X3 MAGNUM MAX.png" alt="GASEBO MAGNUM">
+                  <p>GASEBO MAGNUM</p>
+                </div>
+                <!-- Card 11 -->
+                <div class="card" onclick="openModal('myModal33')">
+                  <img src="/img_posm/GASEBO 3X3 NICE BOLD.png" alt="GASEBO NICE BOLD">
+                  <p>GASEBO NICE BOLD</p>
+                </div>
+                <!-- Card 12 -->
+                <div class="card" onclick="openModal('myModal52')">
+                  <img src="/img_posm/FLAGCHAIN MAGNUM FILTER.jpg" alt="FLAGCHAIN MGM">
+                  <p>FLAGCHAIN MAGNUM FILTER</p>
+                </div>
+                <!-- Card 13 -->
+                <div class="card" onclick="openModal('myModal53')">
+                  <img src="/img_posm/FLAGCHAIN MAGNUM MAX.jpg" alt="FLAGCHAIN MGMX">
+                  <p>FLAGCHAIN MAGNUM MAX</p>
+                </div>
+                <!-- Card 14 -->
+                <div class="card" onclick="openModal('myModal54')">
+                  <img src="/img_posm/TENDA ROMBONG MAGNUM KRETEK.jpg" alt="TENDA ROMBONG MGK">
+                  <p>TENDA ROMBONG MAGNUM KRETEK</p>
+                </div>
+                <!-- Card 15 -->
+                <div class="card" onclick="openModal('myModal55')">
+                  <img src="/img_posm/FLAGCHAIN MAGNUM MAX.jpg" alt="TENDA ROMBONG MGMX">
+                  <p>TENDA ROMBONG MAGNUM MAX</p>
+                </div>
+                <!-- Add more cards if needed -->
+              `;
+            break;
+
+          case "company3":
+            // Add cards for PT KARYA BINA SENTAUSA
+            companyGallery.innerHTML = `
+                
+               
+                <!-- Add more cards if needed -->
+              `;
+            break;
+
+          case "company4":
+            // Add cards for PT CIPTA KRETEK NUSANTARA
+            companyGallery.innerHTML = `
+                
+
+                <!-- Add more cards if needed -->
+              `;
+            break;
+          // Add cases for other companies if needed
+
+          default:
+            break;
+        }
+      }
+
+      // Pemanggilan loadCompanyInfo() pada awal halaman
+      window.onload = function () {
+        loadCompanyInfo();
+      };
+    </script>
+
+    <!-- Menu section end -->
+
+    <footer>
+      <div class="social">
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="twitter"></i></a>
+      </div>
+      <div class="links">
+        <a href="/index.html">Home</a>
+        <a href="/posm/posm.html#barang">Barang</a>
+      </div>
+      <div class="credit">
+        <p>Created by <a href="" target="_blank">Promosi PT. Merapi Maju Makmur</a>. &copy; 2024.</p>
+      </div>
+    </footer>
+
+    <!-- Arrow Up -->
+    <div id="toTop" class="toptip bounce" title="Back to Top"><i data-feather="chevron-up"></i></div>
+    <!-- Arrow Up end-->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- Script untuk Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script untuk transisi scrolling -->
+    <script>
+      $(document).ready(function () {
+        // Tambahkan event handler untuk setiap link navbar yang di-klik
+        $("a").on("click", function (event) {
+          // Pastikan link memiliki hash (#)
+          if (this.hash !== "") {
+            // Mencegah default behavior dari anchor link
+            event.preventDefault();
+
+            // Mengambil hash dari link yang di-klik
+            var hash = this.hash;
+
+            // Menggunakan metode jQuery animate untuk menambahkan efek scroll
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Menambahkan hash ke URL setelah scrolling selesai
+                window.location.hash = hash;
+              }
+            );
+          }
+        });
+      });
+    </script>
+
+    <!-- my javascript -->
+    <script src="/posm/script.js"></script>
+
+    <!-- jQuery AU-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Show or hide the "Back to Top" button
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 200) {
+            $("#toTop").fadeIn();
+          } else {
+            $("#toTop").fadeOut();
+          }
+        });
+
+        // Scroll to top with a smooth transition
+        $("#toTop").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 800); // 800ms for the scroll duration
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>

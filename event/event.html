@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Promosi MMM</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet" />
+
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- jQuery TRANSISI SCROLLING-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- my style -->
+    <link rel="stylesheet" href="/event/style.css" />
+
+    <link rel="shortcut icon" href="/img/favicon Merapi Maju Makmur.png" type="image/x-icon" />
+
+    <style>
+      /* Animasi loading */
+      .loader {
+        border: 8px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 8px solid #3498db;
+        width: 50px;
+        height: 50px;
+        -webkit-animation: spin 1s linear infinite; /* Safari */
+        animation: spin 1s linear infinite;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        display: none; /* Sembunyikan loader awalnya */
+      }
+
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- downArrow -->
+    <style>
+      /* CSS untuk memperbaiki tampilan tombol */
+      .downArrow {
+        position: absolute;
+        bottom: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px; /* Ukuran tombol lebih besar */
+        height: 60px; /* Ukuran tombol lebih besar */
+        background-color: #ffffff; /* Warna cerah */
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, background-color 0.3s;
+        cursor: pointer;
+      }
+
+      .downArrow img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .downArrow:hover {
+        background-color: #d31212; /* Warna hover lebih gelap */
+        transform: scale(1.1);
+      }
+
+      .bounce {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-15px);
+        }
+        60% {
+          transform: translateY(-7px);
+        }
+      }
+
+      /* CSS untuk membuat tombol responsif */
+      @media (max-width: 768px) {
+        .cta {
+          display: block;
+          margin: 10px auto;
+          width: 80%;
+        }
+
+        .downArrow {
+          width: 50px;
+          height: 50px;
+          bottom: 650px;
+        }
+
+        .downArrow img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cta {
+          width: 100%;
+        }
+
+        .downArrow {
+          width: 40px;
+          height: 40px;
+          bottom: 650px;
+        }
+
+        .downArrow img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    </style>
+
+    <!-- ToTop -->
+    <style>
+      #toTop {
+        display: none; /* Initially hidden */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        line-height: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .bounce {
+        animation: bounce 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-15px);
+        }
+        60% {
+          transform: translateY(-7px);
+        }
+      }
+
+      #toTop:hover {
+        background-color: #00b7ff;
+        color: #ffffff;
+        background-position: contain;
+        transform: scale(1.1);
+        background-position: center;
+        background-size: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader" class="loader"></div>
+
+    <!-- navbar start-->
+    <nav class="navbar">
+      <a href="/index.html" class="navbar-logo">Media Promosi<span>MMM</span>.</a>
+      <div class="navbar-nav">
+        <a href="/index.html#">Home</a>
+        <a href="/index.html#barang">Barang</a>
+      </div>
+      <div class="navbar-extra">
+        <a href="#" id="hamburger-menu"> <i data-feather="menu"></i></a>
+      </div>
+    </nav>
+    <!-- navbar end-->
+
+    <!-- Hero Section Start -->
+    <section class="hero-event" id="home">
+      <main class="content">
+        <h1>Barang Perlengkapan Event<span>MMM</span></h1>
+        <p class>#sukses tanpa batas.</p>
+        <a href="/posm/posm.html" class="cta"> Tinjau barang POSM</a>
+        <a href="/merchandise/merchandise.html" class="cta">Tinjau barang Merchandise</a>
+        <a href="/event/event.html" class="cta">Tinjau barang Perlengkapan Event</a>
+        <a href="/vehicle branding/vehicle branding.html" class="cta">Tinjau Branding Kendaraan</a>
+      </main>
+      <a class="downArrow bounce" href="#barang">
+        <img
+          width="40"
+          height="40"
+          alt="Down Arrow"
+          src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4="
+        />
+      </a>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Menu section start -->
+    <section id="barang" class="barang">
+      <h2><span>Barang Perlengkapan Event</span> Kami</h2>
+      <p>Barang Event kami terbagi dalam beberapa golongan sesuai dengan barang produk dari Mitra Perusahaan kami</p>
+      <div class="company-selector">
+        <label for="company">Kategori :</label>
+        <select id="company" onchange="loadCompanyInfo()">
+          <option value="spg">BAJU SPG</option>
+          <option value="tas">TAS SPG</option>
+          <option value="pylon">PYLON SIGN</option>
+          <option value="sc">SHOWCASE</option>
+          <option value="bnr">BANNER</option>
+          <option value="evtdsk">EVENTDESK</option>
+          <option value="stc">STASIUN CARGER</option>
+          <option value="asn">WADAH ASONGAN</option>
+        </select>
+      </div>
+
+      <!-- Gallery Cards -->
+      <div class="gallery" id="companyGallery">
+        <!-- This will be dynamically populated based on the selected company -->
+      </div>
+    </section>
+    <!-- Menu section end -->
+
+    <!-- Modals MAL-->
+    <!-- Modal 1 -->
+    <div class="modal" id="myModal1" onclick="closeModal('myModal1')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal1')">&times;</span>
+        <img src="/img_event/BJ SPG NES 8.png" alt="Gambar 1" />
+        <img src="/img_event/BJ SPG NES 9.png" alt="Gambar 2" />
+
+        <!-- Add more images for modal 1 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal" id="myModal2" onclick="closeModal('myModal2')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal2')">&times;</span>
+        <img src="/img_event/BJ SPG NES 5.png" alt="Gambar 1" />
+        <img src="/img_event/BJ SPG NES 6.png" alt="Gambar 2" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal" id="myModal3" onclick="closeModal('myModal3')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal3')">&times;</span>
+        <img src="/img_event/BJ SPG NES 2.png" alt="Gambar 1" />
+        <img src="/img_event/BJ SPG NES 3.png" alt="Gambar 2" />
+        <!-- Add more images for modal 3 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal" id="myModal4" onclick="closeModal('myModal4')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal4')">&times;</span>
+        <img src="/img_event/TAS SPG NES 8.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal" id="myModal5" onclick="closeModal('myModal5')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal5')">&times;</span>
+        <img src="/img_event/SC NES 2.png" alt="Gambar 1" />
+        <img src="/img_event/SC NES 7.png" alt="Gambar 1" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 12 -->
+    <div class="modal" id="myModal12" onclick="closeModal('myModal12')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal12')">&times;</span>
+        <img src="/img_event/BANNER NES MENTHOL.png" alt="Gambar 1" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- EVENT PT GANDUM -->
+    <!-- Modal 6 -->
+    <div class="modal" id="myModal6" onclick="closeModal('myModal6')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal6')">&times;</span>
+        <img src="/img_event/BJ SPG MGMX 2.png" alt="Gambar 1" />
+        <img src="/img_event/BJ SPG MGMX 3.png" alt="Gambar 2" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div class="modal" id="myModal7" onclick="closeModal('myModal7')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal7')">&times;</span>
+        <img src="/img_event/SC MGK 2.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div class="modal" id="myModal8" onclick="closeModal('myModal8')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal8')">&times;</span>
+        <img src="/img_event/EVENT DESK NES REG 2.png" alt="Gambar 1" />
+        <img src="/img_event/EVENT DESK NES REG.png" alt="Gambar 2" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 9 -->
+    <div class="modal" id="myModal9" onclick="closeModal('myModal9')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal9')">&times;</span>
+        <img src="/img_event/PYLON SIGN NBE 1.png" alt="Gambar 1" />
+        <img src="/img_event/PYLON SIGN NBE 2.png" alt="Gambar 2" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 10 -->
+    <div class="modal" id="myModal10" onclick="closeModal('myModal10')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal10')">&times;</span>
+        <img src="/img_event/PYLON SIGN NES REG 1.png" alt="Gambar 1" />
+        <img src="/img_event/PYLON SIGN NES REG 2.png" alt="Gambar 2" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 13 -->
+    <div class="modal" id="myModal13" onclick="closeModal('myModal13')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal13')">&times;</span>
+        <img src="/img_event/PYLON SIGN NM 1.png" alt="Gambar 1" />
+        <img src="/img_event/PYLON SIGN NM 2.png" alt="Gambar 2" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 11 -->
+    <div class="modal" id="myModal11" onclick="closeModal('myModal11')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal11')">&times;</span>
+        <img src="/img_event/STASIUN CARGER NESLITE 3.png" alt="Gambar 1" />
+        <img src="/img_event/STASIUN CARGER NESLITE 4.png" alt="Gambar 2" />
+        <img src="/img_event/STASIUN CARGER NESLITE 5.png" alt="Gambar 3" />
+        <img src="/img_event/STASIUN CARGER NESLITE 6.png" alt="Gambar 4" />
+        <img src="/img_event/STASIUN CARGER NESLITE 2.png" alt="Gambar 5" />
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 15 -->
+    <div class="modal" id="myModal15" onclick="closeModal('myModal15')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal15')">&times;</span>
+        <img src="/img_event/STASIUN CARGER NESLITE.png" alt="Gambar 1" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Modal 14 -->
+    <div class="modal" id="myModal14" onclick="closeModal('myModal14')">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('myModal14')">&times;</span>
+        <img src="/img_event/ASONGAN 1.png" alt="Gambar 1" />
+        <img src="/img_event/ASONGAN 2.png" alt="Gambar 2" />
+        <img src="/img_event/ASONGAN 3.png" alt="Gambar 3" />
+
+        <!-- Add more images for modal 2 if needed -->
+      </div>
+    </div>
+
+    <!-- Menu section end -->
+
+    <footer>
+      <div class="social">
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="#"><i data-feather="facebook"></i></a>
+        <a href="#"><i data-feather="twitter"></i></a>
+      </div>
+      <div class="links">
+        <a href="/index.html#home">Home</a>
+        <a href="/index.html#barang">Barang</a>
+      </div>
+      <div class="credit">
+        <p>Created by <a href="" target="_blank">Promosi PT. Merapi Maju Makmur</a>. &copy; 2024.</p>
+      </div>
+    </footer>
+
+    <!-- Arrow Up -->
+    <div id="toTop" class="toptip bounce" title="Back to Top"><i data-feather="chevron-up"></i></div>
+    <!-- Arrow Up end-->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+
+    <!-- my javascript -->
+    <script src="/event/script.js"></script>
+
+    <script>
+      // Menampilkan loader saat dokumen dimuat
+      document.onreadystatechange = function () {
+        if (document.readyState === "loading") {
+          // Dokumen masih dimuat, tampilkan loader
+          document.querySelector(".loader").style.display = "block";
+        } else {
+          // Dokumen sudah dimuat, sembunyikan loader
+          document.querySelector(".loader").style.display = "none";
+        }
+      };
+    </script>
+
+    <!-- Script untuk Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script untuk transisi scrolling -->
+    <script>
+      $(document).ready(function () {
+        // Tambahkan event handler untuk setiap link navbar yang di-klik
+        $("a").on("click", function (event) {
+          // Pastikan link memiliki hash (#)
+          if (this.hash !== "") {
+            // Mencegah default behavior dari anchor link
+            event.preventDefault();
+
+            // Mengambil hash dari link yang di-klik
+            var hash = this.hash;
+
+            // Menggunakan metode jQuery animate untuk menambahkan efek scroll
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Menambahkan hash ke URL setelah scrolling selesai
+                window.location.hash = hash;
+              }
+            );
+          }
+        });
+      });
+    </script>
+
+    <!-- jQuery AU-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Show or hide the "Back to Top" button
+        $(window).scroll(function () {
+          if ($(this).scrollTop() > 200) {
+            $("#toTop").fadeIn();
+          } else {
+            $("#toTop").fadeOut();
+          }
+        });
+
+        // Scroll to top with a smooth transition
+        $("#toTop").click(function () {
+          $("html, body").animate({ scrollTop: 0 }, 800); // 800ms for the scroll duration
+          return false;
+        });
+      });
+    </script>
+  </body>
+</html>
